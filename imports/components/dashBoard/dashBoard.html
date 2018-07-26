@@ -1,26 +1,38 @@
-<header>
-    <h1>Dashboard</h1>
-</header>
-<div class="card" style="width: 300px;">
-    <div class="card-body">
-        <ul>
-            <li ng-repeat="i in $ctrl.peopleFind">
-                <span>No. of People: {{i.No_of_people}}@{{i.createdAt.getDate()}}-{{i.createdAt.getMonth()}}-{{i.createdAt.getFullYear()}}</span>
-            </li>    
-        </ul>
+<div class="all">
+    <div class="card">
+        <div class="card-body">
+            <h5>
+                <u>People Count</u>
+            </h5>
+            <table>
+                <tr ng-repeat="i in $ctrl.peopleFind">
+                    <td>
+                        <h5>No. of People: {{i.No_of_people}}@{{i.createdAt.getDate()}}-{{i.createdAt.getMonth()}}-{{i.createdAt.getFullYear()}}</h5>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5>
+                <u>Current value</u>
+            </h5>
+            <table>
+                <tr ng-repeat="j in $ctrl.inside">
+                    <td>
+                        <h5>No. of People Inside
+                            <br>{{j.createdAt.getDate()}}-{{j.createdAt.getMonth()}}-{{j.createdAt.getFullYear()}} | {{j.createdAt.getHours()}}:{{j.createdAt.getMinutes()}}:{{j.createdAt.getSeconds()}}
+                            <b>
+                                <h2>{{j.No_of_people}}</h2>
+                            </b>
+                        </h5>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
-<br>
-<div class="card" style="width: 350px;">
-    <div class="card-body">
-        <li ng-repeat="j in $ctrl.inside">
-            No. of People Inside - {{j.createdAt.getDate()}}-{{j.createdAt.getMonth()}}-{{j.createdAt.getFullYear()}} | {{j.createdAt.getHours()}}:{{j.createdAt.getMinutes()}}:{{j.createdAt.getSeconds()}}<b><h2>{{j.No_of_people}}</h2></b>
-        </li>      
-    </div>
+<div class="chart-container" style="position: relative; height:40vh; width:80vw">
+    <canvas id="myChart"></canvas>
 </div>
-<br>
-<div class="card" style="width: 700px;">
-    <div class="card-body">
-        <div id="sketch-holder"></div>
-    </div>
-</div>    
