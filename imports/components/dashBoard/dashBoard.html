@@ -1,13 +1,13 @@
 <div class="all">
     <div class="card">
         <div class="card-body">
-            <h5>
-                <u>People Count</u>
-            </h5>
             <table>
-                <tr ng-repeat="i in $ctrl.peopleFind">
-                    <td>
-                        <h5>No. of People: {{i.No_of_people}}@{{i.createdAt.getDate()}}-{{i.createdAt.getMonth()}}-{{i.createdAt.getFullYear()}}</h5>
+                <tr ng-repeat="j in $ctrl.inside">
+                    <td style="text-align: center;">
+                        <i class="fa fa-users people" style="font-size:38px;color:#5F68C3;"></i>
+                        <br>
+                        <span class="number">{{j.No_of_people}}</span>
+                        <h6>People Inside</h6>
                     </td>
                 </tr>
             </table>
@@ -15,24 +15,18 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <h5>
-                <u>Current value</u>
-            </h5>
+            <canvas id="guageChart"></canvas>
             <table>
-                <tr ng-repeat="j in $ctrl.inside">
+                <tr>
                     <td>
-                        <h5>No. of People Inside
-                            <br>{{j.createdAt.getDate()}}-{{j.createdAt.getMonth()}}-{{j.createdAt.getFullYear()}} | {{j.createdAt.getHours()}}:{{j.createdAt.getMinutes()}}:{{j.createdAt.getSeconds()}}
-                            <b>
-                                <h2>{{j.No_of_people}}</h2>
-                            </b>
-                        </h5>
+                        Remaining Seats:
+                        <span class="number" id="rem"></span>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
 </div>
-<div class="chart-container" style="position: relative; height:40vh; width:80vw">
-    <canvas id="myChart"></canvas>
+<div class="chart-container">
+    <canvas id="lineChart"></canvas>
 </div>
