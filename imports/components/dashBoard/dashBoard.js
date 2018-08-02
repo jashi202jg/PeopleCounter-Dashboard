@@ -3,18 +3,34 @@ import angularMeteor from 'angular-meteor';
 import template from './dashBoard.html';
 import { People } from '../../api/people.js';
 
-
-
 class dashBoardCtrl {
   constructor($scope) {
-
+    
+      var circleBar = new ProgressBar.Circle('#circle-container', {
+      color: '#f9572b',
+      strokeWidth: 5,
+      trailWidth: 10,
+      trailColor: '#E0E0E0',
+      easing: 'easeInOut'
+      
+    });
     $scope.viewModel(this);
     this.helpers({
-      peopleFind() {
-        return People.find({}).fetch();
-      },
       inside() {
-        return People.find({}, { limit: 1, sort: { createdAt: -1 } }).fetch();
+        var a = People.find({}, { limit: 1, sort: { createdAt: -1 } }).fetch();
+        a = a.map(function (elem) {
+          return elem.No_of_people;
+        });
+  
+        var n = a[0];
+        var x = document.getElementById('no');
+        if(n>100){
+          x.innerHTML = 0;
+        }
+        else{
+          x.innerHTML = 100-n;
+        }
+           
       },
       linegraph() {
         var y = People.find({}, { limit: 10, sort: { createdAt: -1 } }).fetch();
@@ -90,17 +106,27 @@ class dashBoardCtrl {
         gauge.setMinValue(0);  
         gauge.animationSpeed = 1;
         gauge.set(n);
-        var x = document.getElementById('rem')
-        if(n>100){
+        var x = document.getElementById('rem');
+        if(n<0){
           x.innerHTML = 0;
-        }
+        }  
         else{
-          x.innerHTML = 100-n;
-        }
+          x.innerHTML = n;
+        }  
+        
       },
-     /* peak(){
-        var x = People.find({createdAt:}, { limit: 10, sort: { No_of_people: -1 } }).fetch(); 
-      }*/
+      percent(){
+        var a=People.find({}, { limit: 1, sort: { createdAt: -1 } }).fetch();
+        a = a.map(function (elem) {
+          return elem.No_of_people;
+        });
+        var n = a[0];
+        var p = (n/100);
+        
+        circleBar.animate(1-p, {
+          duration: 1500
+        });
+      }
     })
   }
 }

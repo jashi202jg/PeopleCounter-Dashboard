@@ -1,13 +1,13 @@
 <div class="all">
-    <div class="card">
+    <div class="card" style="height:300px;">
         <div class="card-body">
             <table>
-                <tr ng-repeat="j in $ctrl.inside">
+                <tr>
                     <td style="text-align: center;">
-                        <i class="fa fa-users people" style="font-size:38px;color:#5F68C3;"></i>
-                        <br>
-                        <span class="number">{{j.No_of_people}}</span>
-                        <h6>People Inside</h6>
+                        <i class="fa fa-cutlery people" style="font-size:38px;color:#5F68C3;"></i>
+                        <br><br>
+                        <span class="number" id="no"></span><br><br>
+                        <h6>Seats Remaining</h6>
                     </td>
                 </tr>
             </table>
@@ -19,11 +19,17 @@
             <table>
                 <tr>
                     <td>
-                        Remaining Seats:
+                        People Inside:
                         <span class="number" id="rem"></span>
                     </td>
                 </tr>
             </table>
+        </div>
+    </div>
+    <div class="card" style="height:300px;width: 300px;">
+        <div class="card-body">
+            <div id="circle-container"></div>
+            <span style="text-align: center;">Remaining seats</span>
         </div>
     </div>
 </div>
