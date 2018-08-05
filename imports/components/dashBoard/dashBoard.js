@@ -275,10 +275,10 @@ class dashBoardCtrl {
       //   bar.animate(.5);  // Number from 0.0 to 1.0
       // }
     })
-      var stream=document.getElementById("stream");
-      stream.addEventListener('click',function (){
-          alert("hi");
-      }); 
+      // var stream=document.getElementById("stream");
+      // stream.addEventListener('click',function (){
+          
+      // }); 
   }
 }
 export default angular.module('dashBoard', [
