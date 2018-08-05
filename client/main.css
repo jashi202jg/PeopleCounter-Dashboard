@@ -1,5 +1,12 @@
-body{
-    background-color:  #e9dad6 ;
+.cafe{
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+}
+.tagline{
+    font-family: 'PT Sans', sans-serif;
+}
+.normal{
+    font-family: 'PT Sans', sans-serif;
 }
 .clock{
     text-align:center;
@@ -8,23 +15,64 @@ body{
 #jumbo{
     height: 220px;
     padding-top: 0;
-    background-color:#38366d;
-    color: white;
+    color:white;
+    background: url("1.jpg") no-repeat center center;
+    background-size: cover;
+    margin-bottom: 0;
+}
+.main-container{
+    background-color:  #4d4f50;
+    padding-top: 20px;
 }
 .all div{
     float: left;
-    margin: 20px;
+    margin-right: 6px;
+    margin-bottom: 8px;
 }
-.inside-time{
-    font-size: 18px;
-    font-style: italic;
+.right-align div{
+    float: right;
+    margin: 3px;
+}
+.fa_icon{
+    font-size:20px !important;
+    color: #6f7172;
+}
+.people{
+    margin-right: 10px;
+}
+.fork{
+    margin-right: 30px; 
 }
 .number{
-    font-size: 40px;
+    font-size: 25px;
     font-weight: bold;
-    color:orangered;
+    color: #c0f386    ;
 }
 #guageChart{
     width: 100% !important;
     height: auto !important;
+}
+#circle-container{
+    width: 100% !important;
+    height: auto !important;
+}
+#weekCanvas{
+    width: 100% !important;
+    height: auto !important; 
+}
+.basenav{
+    height: 40px;
+}
+#copyright{
+    color:white;
+    font-size: 13px;
+}
+.hrline{
+    border-width: 3px;
+    margin: 0px;
+    border-top: 1px solid #ccc;
+}
+.cardHeight{
+    height: 200px;
+    margin-left: 6px;
 }

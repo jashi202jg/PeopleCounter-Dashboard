@@ -5,6 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#4d4f50" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <script src="https://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
@@ -12,27 +13,43 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
     crossorigin="anonymous">
-    
+  <!-- font links -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 </head>
 
 <body>
+
   <div class="jumbotron jumbotron-fluid" id="jumbo">
     <div class="container">
       <div class="row">
-        <div class="col-md-6"><br>
-          <h1 class="display-5">Dashboard</h1>
-          <h6>People Counter | TCS | GECT</h6>
+        <div class="col-md-6">
+          <br>
+          <span class="display-5 cafe">TCS Cafeteria</span>
+          <i class="fa fa-coffee" style="color:white;margin-left: 10px;font-size:30px;"></i>
+          <h6 class="tagline">Live status</h6>
         </div>
         <div class="col-md-6">
           <div class="clock">
-            <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FKolkata" frameborder="0" seamless></iframe>
+            <br>
+            <iframe src="http://free.timeanddate.com/clock/i6cv7ehd/n1894/fn12/fs19/fcfff/tct/pct/ftb/pa8/tt0/tw1/th1/ta1/tb4" frameborder="0"
+              width="269" height="62" allowTransparency="true"></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container" ng-app="people-counter">
-    <dash-board></dash-board>
+  <div class="main-container">
+    <div class="container" ng-app="people-counter">
+      <dash-board></dash-board>
+    </div>
+  </div>
+  <div class="basenav bg-dark">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <span id="copyright" class="tagline">© 2018 - Powered by TCS IoT team.</span>
+      </li>
+    </ul>
   </div>
 
 </body>

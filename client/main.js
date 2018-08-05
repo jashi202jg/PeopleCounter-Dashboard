@@ -8,4 +8,3 @@ angular.module('people-counter', [
   angularMeteor,
   dashBoard.name
 ]);
-

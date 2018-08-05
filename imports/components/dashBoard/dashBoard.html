@@ -1,38 +1,121 @@
 <div class="all">
-    <div class="card" style="height:300px;">
+    <div class="card text-white bg-dark cardHeight" style="width: 300px;">
         <div class="card-body">
-            <table>
-                <tr>
-                    <td style="text-align: center;">
-                        <i class="fa fa-cutlery people" style="font-size:38px;color:#5F68C3;"></i>
-                        <br><br>
-                        <span class="number" id="no"></span><br><br>
-                        <h6>Seats Remaining</h6>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <canvas id="guageChart"></canvas>
             <table>
                 <tr>
                     <td>
-                        People Inside:
-                        <span class="number" id="rem"></span>
+                        <div>
+                            <i class="fa fa-cutlery fa_icon fork"></i>
+                        </div>
+                        <div>
+                            <span class="number" id="no"></span>
+                            <hr class="hrline">
+                            <span class="number">2000</span>
+                        </div>
+
                     </td>
                 </tr>
             </table>
+            <div>
+                <br>
+                <span class="normal" style="margin-left: 55px;">seats remaining</span>
+            </div>
         </div>
     </div>
-    <div class="card" style="height:300px;width: 300px;">
-        <div class="card-body">
-            <div id="circle-container"></div>
-            <span style="text-align: center;">Remaining seats</span>
+    <div class="card text-white bg-dark cardHeight">
+        <div class="card-body right-align">
+            <table>
+                <tr>
+                    <td>
+                        <div>
+
+                            <span class="normal">
+                                Today's expected Peak Time</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-clock-o fa_icon fork"></i>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <span class="number" id="d1" style="margin-left: 40px;"></span>
+            <span class="number">&ensp;-&ensp;</span>
+            <span class="number" id="d2"></span>
         </div>
     </div>
+    <div class="card text-white bg-dark cardHeight">
+        <div class="card-body right-align">
+            <table>
+                <tr>
+                    <td>
+
+                        <div>
+                            <span class="normal">
+                                Last week Peak Time</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-clock-o fa_icon fork"></i>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <span class="number" id="n1" style="margin-left: 40px;"></span>
+            <span class="normal">&ensp;&ensp;People on</span>
+            <span class="number" id="n3" style="margin-left: 20px;"></span><br>
+            <span class="normal" style="margin-left: 40px;">at</span>
+            <span class="number" id="n2" style="margin-left: 20px;"></span>
+
+        </div>
+    </div>
+    <div class="card text-white bg-dark">
+        <div class="card-body right-align">
+            <div>
+                <canvas id="guageChart"></canvas>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <i class="fa fa-users fa_icon people"></i>
+                            <span class="normal">People Inside:</span>
+                            <span class="number" id="rem"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card text-white bg-dark">
+        <div class="card-body right-align">
+            <div>
+                <canvas id="circle-container"></canvas>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <i class="fa fa-circle-o-notch fa_icon people"></i>
+                            <span class="number" id="metrem"></span>
+                            <span class="normal">of Cafeteria
+                                <br>&ensp;&ensp;&ensp;&ensp; is occupied.</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
 </div>
-<div class="chart-container">
-    <canvas id="lineChart"></canvas>
+
+<div class="card text-white bg-dark" style="width:100%;height:100%;">
+    <div class="card-body">
+        <i class="fa fa-line-chart fa_icon"></i>
+        <canvas id="lineChart"></canvas>
+    </div>
 </div>
+<br>
+<br>
