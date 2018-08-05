@@ -5,7 +5,7 @@ import { People } from '../../api/people.js';
 
 class dashBoardCtrl {
   constructor($scope) {
-    
+
     $scope.viewModel(this);
     this.helpers({
       inside() {
@@ -142,9 +142,20 @@ class dashBoardCtrl {
         x.innerHTML = Math.round(c) + '%';
       },
       peak() {
-        var start = new Date();
-        start.setHours(0, 0, 0, 0);
-        var a = People.find({ "createdAt": { $lt: start } }, { limit: 1, sort: { createdAt: -1, No_of_people: -1 } }).fetch();
+        var d = new Date();
+        if (d.getDay() == 0)
+          d.setDate(d.getDate() - 2);
+        else if (d.getDay() == 1)
+          d.setDate(d.getDate() - 3);
+        else
+          d.setDate(d.getDate() - 1);
+
+        d.toISOString();
+        d.setHours(0,0,0,0);
+        var start =d.toISOString();
+        d.setHours(23,59,59,999);
+        var end = d.toISOString();
+        var a = People.find({"createdAt":{$gte:new Date(start),$lte:new Date(end)}},{ limit: 1, sort: { No_of_people: -1 } }).fetch();
         a = a.map(function (elem) {
           return elem.createdAt;
         });
@@ -160,20 +171,20 @@ class dashBoardCtrl {
         y.innerHTML = nmax.getHours() + " : " + nmax.getMinutes();
 
       },
-      lastpeak(){
-        var a = People.find({"createdAt": {$gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000)}},{limit: 1, sort: { No_of_people: -1 }}).fetch();  
+      lastpeak() {
+        var a = People.find({ "createdAt": { $gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000) } }, { limit: 1, sort: { No_of_people: -1 } }).fetch();
         a = a.map(function (elem) {
           return elem.No_of_people;
         });
         var n1 = a[0];
 
-        var b = People.find({"createdAt": {$gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000)}},{limit: 1, sort: { No_of_people: -1 }}).fetch();  
+        var b = People.find({ "createdAt": { $gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000) } }, { limit: 1, sort: { No_of_people: -1 } }).fetch();
         b = b.map(function (elem) {
           return elem.createdAt.getHours() + ':' + elem.createdAt.getMinutes();
         });
         var n2 = b[0];
 
-        var c = People.find({"createdAt": {$gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000)}},{limit: 1, sort: { No_of_people: -1 }}).fetch();  
+        var c = People.find({ "createdAt": { $gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000) } }, { limit: 1, sort: { No_of_people: -1 } }).fetch();
         c = c.map(function (elem) {
           return elem.createdAt.getDate() + '/' + elem.createdAt.getMonth() + '/' + elem.createdAt.getFullYear();
         });
@@ -264,9 +275,12 @@ class dashBoardCtrl {
       //   bar.animate(.5);  // Number from 0.0 to 1.0
       // }
     })
+      var stream=document.getElementById("stream");
+      stream.addEventListener('click',function (){
+          alert("hi");
+      }); 
   }
 }
-
 export default angular.module('dashBoard', [
   angularMeteor
 ])
