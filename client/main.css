@@ -41,7 +41,7 @@
     margin-right: 10px;
 }
 .fork{
-    margin-right: 30px; 
+    margin-right: 20px; 
 }
 .number{
     font-size: 25px;
@@ -74,4 +74,8 @@
 }
 .cardHeight{
     height: 200px;
+}
+.frame{
+    margin: auto;
+    width: 50%;
 }

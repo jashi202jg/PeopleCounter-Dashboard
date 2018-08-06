@@ -99,7 +99,7 @@ class dashBoardCtrl {
         var gauge = new Gauge(target).setOptions(opts);
         gauge.maxValue = 2000;
         gauge.setMinValue(0);
-        gauge.animationSpeed = 1;
+        gauge.animationSpeed = 50;
         gauge.set(n);
         var x = document.getElementById('rem');
         if (n < 0) {
@@ -210,6 +210,7 @@ class dashBoardCtrl {
           options: {
             scales: {
               xAxes: [{
+                barThickness :20,
                 ticks: {
                   beginAtZero: true
                 }
