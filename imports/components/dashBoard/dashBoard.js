@@ -198,7 +198,7 @@ class dashBoardCtrl {
           ],
           datasets: [{
             label: "Weekly Traffic %",
-            data: [8.1],
+            data: [n],
             backgroundColor: ["#98f134", "#98f134", "#98f134", "#98f134", "#98f134"],
             borderWidth: 1
           }]
