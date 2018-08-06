@@ -75,7 +75,12 @@
 .cardHeight{
     height: 200px;
 }
-.frame{
-    margin: auto;
-    width: 50%;
-}
+
+@media(max-width: 768px){
+    .mini{
+        width:314px !important;
+    }
+    .mini-new{
+        height:300px !important;
+    }
+}       
