@@ -189,7 +189,7 @@ class dashBoardCtrl {
           return elem.No_of_people;
         });
         var n = a[0];
-        var p = (n/2000)*100;
+        //var p = (n/2000)*100;
         
         var MeSeContext = document.getElementById("weekCanvas").getContext("2d");
         var MeSeData = {
