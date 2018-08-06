@@ -143,7 +143,7 @@ class dashBoardCtrl {
       },
       peak() {
         var d = new Date();
-        if (d.getDay() == 0)
+        if (d.getDay() == 0)//0-sunday
           d.setDate(d.getDate() - 2);
         else if (d.getDay() == 1)
           d.setDate(d.getDate() - 3);
@@ -151,11 +151,11 @@ class dashBoardCtrl {
           d.setDate(d.getDate() - 1);
 
         d.toISOString();
-        d.setHours(0,0,0,0);
-        var start =d.toISOString();
-        d.setHours(23,59,59,999);
+        d.setHours(0, 0, 0, 0);
+        var start = d.toISOString();
+        d.setHours(23, 59, 59, 999);
         var end = d.toISOString();
-        var a = People.find({"createdAt":{$gte:new Date(start),$lte:new Date(end)}},{ limit: 1, sort: { No_of_people: -1 } }).fetch();
+        var a = People.find({ "createdAt": { $gte: new Date(start), $lte: new Date(end) } }, { limit: 1, sort: { No_of_people: -1 } }).fetch();
         a = a.map(function (elem) {
           return elem.createdAt;
         });
@@ -171,114 +171,62 @@ class dashBoardCtrl {
         y.innerHTML = nmax.getHours() + " : " + nmax.getMinutes();
 
       },
-      lastpeak() {
-        var a = People.find({ "createdAt": { $gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000) } }, { limit: 1, sort: { No_of_people: -1 } }).fetch();
+      barchart() {
+        var d = new Date();
+        d.setDate(d.getDate() - 7);
+        
+        var w = d.getDay();
+        var arr = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+        var day = arr[w];
+        
+        d.toISOString();
+        d.setHours(0, 0, 0, 0);
+        var start = d.toISOString();
+        d.setHours(23, 59, 59, 999);
+        var end = d.toISOString();
+        var a = People.find({ "createdAt": { $gte: new Date(start), $lte: new Date(end) } }, { limit: 1, sort: { No_of_people: -1 } }).fetch();
         a = a.map(function (elem) {
           return elem.No_of_people;
         });
-        var n1 = a[0];
+        var n = a[0];
+        var p = (n/2000)*100;
+        
+        var MeSeContext = document.getElementById("weekCanvas").getContext("2d");
+        var MeSeData = {
+          labels: [
+            day
+          ],
+          datasets: [{
+            label: "Weekly Traffic %",
+            data: [p],
+            backgroundColor: ["#98f134", "#98f134", "#98f134", "#98f134", "#98f134"],
+            borderWidth: 1
+          }]
+        };
 
-        var b = People.find({ "createdAt": { $gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000) } }, { limit: 1, sort: { No_of_people: -1 } }).fetch();
-        b = b.map(function (elem) {
-          return elem.createdAt.getHours() + ':' + elem.createdAt.getMinutes();
+        var MeSeChart = new Chart(MeSeContext, {
+          type: 'horizontalBar',
+          data: MeSeData,
+          options: {
+            scales: {
+              xAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }],
+              yAxes: [{
+                stacked: true
+              }]
+            }
+
+          }
         });
-        var n2 = b[0];
-
-        var c = People.find({ "createdAt": { $gte: new Date(new Date() - 7 * 60 * 60 * 24 * 1000) } }, { limit: 1, sort: { No_of_people: -1 } }).fetch();
-        c = c.map(function (elem) {
-          return elem.createdAt.getDate() + '/' + elem.createdAt.getMonth() + '/' + elem.createdAt.getFullYear();
-        });
-        var n3 = c[0];
-
-        var x = document.getElementById("n1");
-        x.innerHTML = n1;
-
-        var y = document.getElementById("n2");
-        y.innerHTML = n2;
-
-        var z = document.getElementById("n3");
-        z.innerHTML = n3;
-
       }
-      // barchart() {
-      //   var MeSeContext = document.getElementById("weekCanvas").getContext("2d");
-      //   var MeSeData = {
-      //     labels: [
-      //       "Mon",
-      //       "Tue",
-      //       "Wed",
-      //       "Thu",
-      //       "Fri"
-      //     ],
-      //     datasets: [{
-      //       label: "Weekly Traffic %",
-      //       data: [90, 75, 45, 64, 33],
-      //       backgroundColor: ["#98f134", "#98f134", "#98f134", "#98f134", "#98f134"],
-      //       borderWidth: 1
-      //     }]
-      //   };
-
-      //   var MeSeChart = new Chart(MeSeContext, {
-      //     type: 'horizontalBar',
-      //     data: MeSeData,
-      //     options: {
-      //       scales: {
-      //         xAxes: [{
-      //           ticks: {
-      //             beginAtZero: true
-      //           }
-      //         }],
-      //         yAxes: [{
-      //           stacked: true
-      //         }]
-      //       }
-
-      //     }
-      //   });
-      // },
-      // progress() {
-
-      //   // var a = People.find({}, { limit: 1, sort: { createdAt: -1 } }).fetch();
-      //   // a = a.map(function (elem) {
-      //   //   return elem.No_of_people;
-      //   // });
-      //   // var n = a[0];
-      //   // var c = (n / 2000);
-      //   // console.log(c)
-      //   var bar = new ProgressBar.Line('#progressBar', {
-      //     strokeWidth: 2,
-      //     easing: 'easeInOut',
-      //     duration: 1400,
-      //     color: '#98f134',
-      //     trailColor: '#eee',
-      //     trailWidth: .5,
-      //     text: {
-      //       style: {
-      //         // Text color.
-      //         // Default: same as stroke color (options.color)
-      //         color: '#999',
-      //         position: 'relative',
-      //         right: '0',
-      //         top: '10px',
-      //         padding: 0,
-      //         margin: 0,
-      //         transform: null
-      //       },
-      //       autoStyleContainer: false
-      //     },
-      //     from: { color: '#FFEA82' },
-      //     to: { color: '#ED6A5A' },
-      //     step: (state, bar) => {
-      //       bar.setText(Math.round(bar.value() * 100) + ' %');
-      //     }
-      //   });
-      //   bar.animate(.5);  // Number from 0.0 to 1.0
-      // }
     })
-      // var stream=document.getElementById("stream");
-      // stream.addEventListener('click',function (){
-          
-      // }); 
+    // var stream=document.getElementById("stream");
+    // stream.addEventListener('click',function (){
+
+    // }); 
   }
 }
 export default angular.module('dashBoard', [

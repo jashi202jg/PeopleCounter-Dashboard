@@ -1,5 +1,5 @@
 <div class="all">
-    <div class="card text-white bg-dark cardHeight" style="width: 300px;">
+    <div class="card text-white bg-dark cardHeight">
         <div class="card-body">
             <table>
                 <tr>
@@ -8,18 +8,18 @@
                             <i class="fa fa-cutlery fa_icon fork"></i>
                         </div>
                         <div>
-                            <span class="number" id="no"></span>
-                            <hr class="hrline">
-                            <span class="number">2000</span>
+                            <span class="normal">
+                                Seats Remaining</span>
                         </div>
-
                     </td>
                 </tr>
             </table>
-            <div>
-                <br>
-                <span class="normal" style="margin-left: 55px;">seats remaining</span>
-            </div>
+            <br>
+            <div style="margin-left: 40px;">
+            <span class="number" id="no"></span>
+            <hr class="hrline">
+            <span class="number">2000</span>
+        </div>
         </div>
     </div>
     <div class="card text-white bg-dark cardHeight">
@@ -47,30 +47,23 @@
     </div>
     <div class="card text-white bg-dark cardHeight">
         <div class="card-body right-align">
-            <table>
-                <tr>
-                    <td>
-
-                        <div>
-                            <span class="normal">
-                                Last week Peak Time</span>
-                        </div>
-                        <div>
-                            <i class="fa fa-clock-o fa_icon fork"></i>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <br>
-            <span class="number" id="n1" style="margin-left: 40px;"></span>
-            <span class="normal">&ensp;&ensp;People on</span>
-            <span class="number" id="n3" style="margin-left: 20px;"></span>
-            <br>
-            <span class="normal" style="margin-left: 40px;">at</span>
-            <span class="number" id="n2" style="margin-left: 20px;"></span>
-
+            <div>
+                <canvas id="weekCanvas"></canvas>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <i class="fa fa-bar-chart fa_icon people"></i>
+                            <span class="normal">Last week traffic</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
+
+
     <div class="card text-white bg-dark">
         <div class="card-body right-align">
             <div>
