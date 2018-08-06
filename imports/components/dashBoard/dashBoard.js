@@ -198,7 +198,7 @@ class dashBoardCtrl {
           ],
           datasets: [{
             label: "Weekly Traffic %",
-            data: [p],
+            data: [8.1],
             backgroundColor: ["#98f134", "#98f134", "#98f134", "#98f134", "#98f134"],
             borderWidth: 1
           }]
@@ -223,11 +223,7 @@ class dashBoardCtrl {
           }
         });
       }
-    })
-    // var stream=document.getElementById("stream");
-    // stream.addEventListener('click',function (){
-
-    // }); 
+    })  
   }
 }
 export default angular.module('dashBoard', [
