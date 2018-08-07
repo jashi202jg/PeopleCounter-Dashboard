@@ -87,16 +87,16 @@
         margin-left:110px;
     }
 }
-@media(max-width: 340px){
+@media(max-width: 355px){
     .clock_resp{
-        margin-top: -33px !important;
+        margin-top: -50px !important;
     }
 }
 
 
 .frame{
     position: relative;
-    /* width:95%; */
+
 }
 .live{
     position: absolute;
