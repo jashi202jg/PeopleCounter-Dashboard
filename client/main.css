@@ -24,15 +24,15 @@
     background-color:  #4d4f50;
     padding-top: 20px;
 }
-.all div{
+/* .all div{
     float: left;
     margin-right: 6px;
     margin-bottom: 8px;
-}
-.right-align div{
-    float: right;
-    margin: 3px;
-}
+} */
+/* .right-align div{ */
+    /* float: right;
+    margin: 3px; */
+/* } */
 .fa_icon{
     font-size:20px !important;
     color: #6f7172;
@@ -73,20 +73,41 @@
     border-top: 1px solid #ccc;
 }
 .cardHeight{
-    height: 200px;
+    height: auto;
 }
 
 @media(max-width: 768px){
-    .mini{
-        width:339px !important;
+    .card{
+    margin: 0px 10px 10px 10px !important;
     }
-    .mini-new{
-        height:300px !important;
+    .l-chart-row {
+        padding:0px 0px 0px 0px !important;
     }
     .minseat{
-        margin-left: 117px !important;
+        margin-left:110px;
     }
-    .minseat2{
-        margin-left: 48px !important;
+}
+@media(max-width: 340px){
+    .clock_resp{
+        margin-top: -33px !important;
     }
-}  
+}
+
+
+.frame{
+    position: relative;
+    /* width:95%; */
+}
+.live{
+    position: absolute;
+    top:10px;
+    right: 10px;
+}
+.card{
+    margin: 0px 0px 10px 0px ;
+}
+
+.fork_2{
+    margin-left: -10px;
+    margin-right: 10px;
+}

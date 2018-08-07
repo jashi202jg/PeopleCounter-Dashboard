@@ -1,122 +1,132 @@
-<div class="all">
-    <div class="card text-white bg-dark cardHeight mini" style="width:245px;">
-        <div class="card-body">
-            <table>
-                <tr>
-                    <td>
-                        <div>
-                            <i class="fa fa-cutlery fa_icon fork"></i>
-                        </div>
-                        <div>
-                            <span class="normal">
-                                Seats Remaining</span>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <br>
-            <div style="margin-left: 40px;" class="minseat">
-                <span class="number" id="no"></span>
-                <hr class="hrline">
-                <span class="number">2000</span>
-            </div>
-        </div>
-    </div>
-    <div class="card text-white bg-dark cardHeight mini">
-        <div class="card-body right-align">
-            <table>
-                <tr>
-                    <td>
-                        <div>
-
-                            <span class="normal">
-                                Today's expected Peak Time</span>
-                        </div>
-                        <div>
-                            <i class="fa fa-clock-o fa_icon fork"></i>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <br>
-            <br>
-            <span class="number minseat2" id="d1" style="margin-left: 10px;"></span>
-            <span class="number">&ensp;-&ensp;</span>
-            <span class="number" id="d2"></span>
-        </div>
-    </div>
-    <div class="card text-white bg-dark cardHeight">
-        <div class="card-body right-align">
-            <div>
-                <canvas id="weekCanvas"></canvas>
-            </div>
-            <div>
+<div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="card text-white bg-dark cardHeight mini col-md-3 col-xs-12">
+            <div class="card-body">
                 <table>
                     <tr>
                         <td>
-                            <i class="fa fa-bar-chart fa_icon fork"></i>
-                            <span class="normal" id="last"></span>
+                            <div>
+                                <i class="fa fa-cutlery fa_icon fork"></i>
+                                <span class="normal">
+                                    Seats Remaining</span>
+                            </div>
                         </td>
                     </tr>
                 </table>
+                <br>
+                <div class="row">
+                <div class="col-md-4"></div>
+                <div  class="minseat col-xs-3">
+                    <span class="number" id="no"></span>
+                    <hr class="hrline" style="width: 59px;">
+                    <span class="number">2000</span>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="card text-white bg-dark">
-        <div class="card-body right-align">
-            <div>
-                <canvas id="guageChart"></canvas>
-            </div>
-            <div>
+        <hr style="margin: 5px;">
+        <div class="card text-white bg-dark cardHeight mini col-md-3 col-xs-12">
+            <div class="card-body right-align">
                 <table>
                     <tr>
                         <td>
-                            <i class="fa fa-users fa_icon people"></i>
-                            <span class="normal">People Inside:</span>
-                            <span class="number" id="rem"></span>
+                            <div>
+                                <i class="fa fa-clock-o fa_icon fork_2"></i>
+                                <span class="normal">
+                                    Today's expected Peak Time</span>
+                        
+                            </div>
                         </td>
                     </tr>
                 </table>
+                <br>
+                <br>
+                <span class="number minseat2" id="d1" style="margin-left: 10px;"></span>
+                <span class="number">&ensp;-&ensp;</span>
+                <span class="number" id="d2"></span>
+            </div>
+        </div>
+        <hr style="margin: 5px;">
+        <div class="card text-white bg-dark cardHeight col-md-4 col-xs-12">
+            <div class="card-body right-align">
+                <div>
+                    <canvas id="weekCanvas"></canvas>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <i class="fa fa-bar-chart fa_icon fork"></i>
+                                <span class="normal" id="last"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="card text-white bg-dark col-md-5 col-xs-12">
+            <div class="card-body right-align">
+                <div>
+                    <canvas id="guageChart"></canvas>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <i class="fa fa-users fa_icon people"></i>
+                                <span class="normal">People Inside:</span>
+                                <span class="number" id="rem"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <hr style="margin: 10px;">
+        <div class="card text-white bg-dark col-md-5 col-xs-12">
+            <div class="card-body right-align">
+                <div>
+                    <canvas id="circle-container"></canvas>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <i class="fa fa-circle-o-notch fa_icon people"></i>
+                                <span class="number" id="metrem"></span>
+                                <span class="normal">of Cafeteria is occupied.</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="card text-white bg-dark">
-        <div class="card-body right-align">
-            <div>
-                <canvas id="circle-container"></canvas>
-            </div>
-            <div>
-                <table>
-                    <tr>
-                        <td>
-                            <i class="fa fa-circle-o-notch fa_icon people"></i>
-                            <span class="number" id="metrem"></span>
-                            <span class="normal">of Cafeteria
-                                <br>&ensp;&ensp;&ensp;&ensp; is occupied.</span>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-
 </div>
-
-<div class="card text-white bg-dark mini" style="width:95%;height:100%;">
+<div class="row l-chart-row" style="padding: 0px 73px 0px 5px;">
+<div class="col-md-1"></div>
+<div class="card text-white bg-dark mini col-md-11" style="height:100%;">
     <div class="card-body">
         <i class="fa fa-line-chart fa_icon"></i>
         <canvas id="lineChart"></canvas>
     </div>
 </div>
-<br>
-
-<!-- <div class="frame">
-    <iframe id="ifr" class="mini mini-new" src="http://192.168.43.220:8080/browserfs.html" frameborder="0" border="0" cellspacing="0" style="border-style: none;width:1060px; height:700px;">
-        <p>Your browser does not support iframes.</p>
-    </iframe>
 </div>
 <br>
-<br> -->
+
+<div class="frame row" style="padding: 0px 73px 0px 5px;">
+    <div class="col-md-1"></div>
+    <div class="col-md-11">
+    <iframe id="ifr" class="mini mini-new" src="http://192.168.43.220:8080/browserfs.html" frameborder="0" border="0" cellspacing="0" style=" border-style: none;width:100%; height:700px;">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+    <div class="badge badge-pill badge-danger live" style="font-size: 30px; margin-right: 10px;">Live</div>
+    </div>
+</div>
