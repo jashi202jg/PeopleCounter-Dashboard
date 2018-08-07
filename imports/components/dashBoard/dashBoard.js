@@ -41,14 +41,13 @@ class dashBoardCtrl {
           return a;
         });
 
-        var d = new Date();
         var ctx = document.getElementById("lineChart").getContext('2d');
         var myChart = new Chart(ctx, {
           type: 'line',
           data: {
             labels: x,
             datasets: [{
-              label: '# of People  |  ' + d.getDate() + '-' + d.getMonth() + '-' + d.getFullYear() + ' ',
+              label: '# of People',
               data: y,
               borderWidth: 1,
               fill: false,
@@ -99,7 +98,7 @@ class dashBoardCtrl {
         var gauge = new Gauge(target).setOptions(opts);
         gauge.maxValue = 2000;
         gauge.setMinValue(0);
-        gauge.animationSpeed = 50;
+        gauge.animationSpeed = 35;
         gauge.set(n);
         var x = document.getElementById('rem');
         if (n < 0) {
@@ -176,8 +175,11 @@ class dashBoardCtrl {
         d.setDate(d.getDate() - 7);
         
         var w = d.getDay();
-        var arr = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+        var arr = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         var day = arr[w];
+
+        var x = document.getElementById("last");
+        x.innerHTML = "Last "+day+" traffic";
         
         d.toISOString();
         d.setHours(0, 0, 0, 0);
@@ -189,7 +191,7 @@ class dashBoardCtrl {
           return elem.No_of_people;
         });
         var n = a[0];
-        //var p = (n/2000)*100;
+        var p = (n/2000)*100;
         
         var MeSeContext = document.getElementById("weekCanvas").getContext("2d");
         var MeSeData = {
@@ -197,8 +199,8 @@ class dashBoardCtrl {
             day
           ],
           datasets: [{
-            label: "Weekly Traffic %",
-            data: [n],
+            label: "Last week Traffic %",
+            data: [p],
             backgroundColor: ["#98f134", "#98f134", "#98f134", "#98f134", "#98f134"],
             borderWidth: 1
           }]
