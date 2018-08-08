@@ -11,6 +11,8 @@
 .clock{
     text-align:center;
     padding:1em 0;
+    pointer-events: none;
+    cursor: default;      
 }
 #jumbo{
     height: 220px;
@@ -24,15 +26,6 @@
     background-color:  #4d4f50;
     padding-top: 20px;
 }
-/* .all div{
-    float: left;
-    margin-right: 6px;
-    margin-bottom: 8px;
-} */
-/* .right-align div{ */
-    /* float: right;
-    margin: 3px; */
-/* } */
 .fa_icon{
     font-size:20px !important;
     color: #6f7172;
